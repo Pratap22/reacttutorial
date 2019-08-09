@@ -17,11 +17,16 @@ class AppClass extends React.Component {
     const { employess } = this.state;
     let employeeDiv = [];
 
+    // It just iterate and returns nothing
     employess.forEach((employee, index) => {
       employeeDiv.push(<Pratap name={employee.name} key={index} />);
     });
     return employeeDiv;
   };
+
+  componentWillUnmount() {
+    console.log('ComponentWillUnMount From AppClass');
+  }
 
   render() {
     console.log('State count inside render ', this.state.count);
