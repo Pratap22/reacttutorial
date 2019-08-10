@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AppClass from './AppClass';
 
 const employees = [
   {
@@ -57,6 +56,8 @@ class React_03_LifeCycle extends Component {
     // Closing open API Calls -> asynchronous
     // Closing memory related stuffs -> asynchronous
   }
+
+  // class A(state) ->  Class B(props, state) or Function B(props)
 
   // updating lifecycle
   //1. shouldComponentUpdate
