@@ -1,5 +1,4 @@
 import React from 'react';
-
 const employees = [
   {
     name: 'Raj',
@@ -23,8 +22,23 @@ const employees = [
   }
 ];
 
-class FilterReduce extends React.Component {
-  render() {
-    return <div>Filter</div>;
-  }
+// Array -> name, age: 25
+
+// filter
+// map - foreach
+
+//
+export function PrintFilteredArray() {
+  return employees
+    .filter(item => item.age >= 25)
+    .map((item, index) => (
+      <div key={index}>
+        <p>{item.name}</p>
+        <p>{item.age}</p>
+      </div>
+    ));
 }
+
+// Angular -> Kitchen -> You'll get every recepie in one place (File size is high)
+// React -> Kitchen -> Purchase Recepie according to your needs
+//(FIle size increases as per your need)
