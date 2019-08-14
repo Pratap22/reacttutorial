@@ -14,9 +14,9 @@ class NavBar extends React.Component {
         <li>
           <Link to="/private">Private</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/componentA">Component A</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/component2">Component B</Link>
         </li>
