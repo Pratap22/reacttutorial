@@ -78,7 +78,11 @@ export default AppClass;
 
 // Rest API call
 
-// Node server -> How to create
+// Rest API call + React ContextAPI -> App
+// -> 3-4 restApi call -> respnse -> store in global state
+
+// Node server -> How to create ->
+// MEAN -> MongoDb Express Angular Node  MERN -> MongoDb Express React Node
 
 // Combine React state, Routing, Rest Api, Node(server)
 
@@ -92,5 +96,7 @@ export default AppClass;
 // Child to parent communication
 // Passing props to child
 // getting callback from children
+
+// Hooks implementation
 
 // React-Redux -> ///
