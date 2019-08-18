@@ -6,16 +6,29 @@ import { API_CONSTANT, REACT_MUSIC_APP, HEROKU_CORS } from './constants';
 // 2. Provider
 // 3. Conusmer
 
+const reducer = (prevState, action) => {
+  switch (action.type) {
+    case 'SEARCH_RESULT':
+      return {
+        ...prevState,
+        track_list: action.payload,
+        heading: 'Search Result'
+      };
+    default:
+      return prevState;
+  }
+};
+
 const Context = React.createContext();
 
 export class Provider extends Component {
   state = {
     track_list: [],
     heading: 'Top songs',
-    loading: false,
-    error: {
-      error: true,
-      message: 'sdsds'
+    dispatch: function(action) {
+      return this.setState(function(prevState) {
+        return reducer(prevState, action); // -> updated state => prevState
+      });
     }
   };
 

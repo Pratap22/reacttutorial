@@ -2,7 +2,8 @@ import React from 'react';
 import { Provider } from './Context';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Tracks from './data/Tracks';
+import Lyrics from './data/Lyrics';
+import Index from './components';
 
 export class ReactContext extends React.Component {
   render() {
@@ -11,7 +12,8 @@ export class ReactContext extends React.Component {
         <BrowserRouter>
           <NavBar />
           <Switch>
-            <Route path="/" component={Tracks} />
+            <Route exact path="/" component={Index} />
+            <Route exact path="/lyrics/track/:id" component={Lyrics} />
           </Switch>
         </BrowserRouter>
       </Provider>
