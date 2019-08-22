@@ -1,17 +1,25 @@
 import React from 'react';
 
-const TodoItem = props => {
-  // presentational component or stateless component
+class TodoItem extends React.Component {
+  state={
+    input: ""
+  }
+  componentDidMount(){
+    this.setState({input: this.props.name})
+  }
+  render(){
   return (
     <div>
-      <p title={props.tips}>
-        {props.name}{' '}
+      <input type="text" onChange={} value={this.state.input} />
         <span onClick={props.handleDeleteItem} style={{ cursor: 'pointer' }}>
           X
         </span>
-      </p>
+        <span onClick={props.updateItem} style={{ cursor: 'pointer' }}>
+          Update
+        </span>
     </div>
   );
+  }
 };
 
 export default TodoItem;

@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { ReactContext } from './reactClass/lyricSearch';
+import Todo from './reactClass/Todo/React_05_TodoApp';
 
-ReactDOM.render(<ReactContext />, document.getElementById('root'));
+ReactDOM.render(<Todo />, document.getElementById('root'));
 serviceWorker.unregister();
 
 // admin -> Need to check if user is login.
