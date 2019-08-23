@@ -69,18 +69,44 @@ class Todo extends Component {
     });
   };
 
+  handleItemUpdate = (data, id) => {
+    axios
+      .post(`${API_URL_CONST}/update/${id}`, {
+        title: data,
+        is_completed: false
+      })
+      .then(res => {
+        if (res.status === 200) {
+          this.getAllTodosFromApi();
+        } else {
+          alert('Some Error');
+        }
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div>
         <TodoInput onTodoItemAdd={value => this.handleItemAdd(value)} />
-        {this.state.todos.map((item, index) => (
-          <TodoItem
-            name={item.title}
-            tips="This is todo"
-            handleDeleteItem={() => this.handleItemDelete(item._id)}
-            key={`${index} - ${item._id}`}
-          />
-        ))}
+        <table style={{ border: '1px solid grey' }}>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Delete</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          {this.state.todos.map((item, index) => (
+            <TodoItem
+              name={item.title}
+              tips="This is todo"
+              handleDeleteItem={() => this.handleItemDelete(item._id)}
+              updateItem={data => this.handleItemUpdate(data, item._id)}
+              key={`${index} - ${item._id}`}
+            />
+          ))}
+        </table>
       </div>
     );
   }

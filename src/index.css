@@ -49,3 +49,8 @@ code {
   margin-top: 20px;
   user-select: none;
 }
+
+th,
+td {
+  border: 1px solid #dddddd;
+}
